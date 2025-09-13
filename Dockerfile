@@ -1,17 +1,4 @@
-FROM node:12-alpine
+FROM n8nio/n8n:latest
 
-WORKDIR /app
-COPY *.json ./
-COPY *.js ./
-
-COPY ./bin ./bin/
-COPY ./public ./public/
-COPY ./routes ./routes/
-COPY ./views ./views/
-
-RUN chown -Rf node:node .
-
-USER node
-EXPOSE 3000
-RUN npm ci --only=production
-ENTRYPOINT [ "npm", "start" ]
+# n8n은 기본 CMD ["n8n"]이 포함되어 있으므로 추가 명령 필요 없음
+EXPOSE 5678
