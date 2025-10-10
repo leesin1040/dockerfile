@@ -1,3 +1,8 @@
-FROM n8nio/n8n:1.112.5
+# 1) 버전 변수화
+ARG N8N_VERSION=1.112.5
+# 2) 캐시 무효화용 더미(값만 바꿔주면 됨)
+ENV N8N_BUILD_NO_CACHE=2025-10-11-01
+
+FROM n8nio/n8n:${N8N_VERSION}
 
 EXPOSE 5678
