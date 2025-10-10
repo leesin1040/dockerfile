@@ -1,8 +1,6 @@
-# 1) 버전 변수화
-ARG N8N_VERSION=1.112.5
-# 2) 캐시 무효화용 더미(값만 바꿔주면 됨)
-ENV N8N_BUILD_NO_CACHE=2025-10-11-01
+ARG N8N_VERSION=1.114.3
+FROM docker.n8n.io/n8nio/n8n:${N8N_VERSION}
 
-FROM n8nio/n8n:${N8N_VERSION}
-
+# 캐시 무효화용 더미 값(버전 바꿀 때마다 숫자도 바꿔줘)
+ENV CT_REBUILD=2025-10-11
 EXPOSE 5678
